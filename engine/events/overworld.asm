@@ -1620,14 +1620,13 @@ UnusedNothingHereText: ; unused
 	text_far _UnusedNothingHereText
 	text_end
 
-BikeFunction:
-	call .TryBike
-	and $7f
-	ld [wFieldMoveSucceeded], a
-	ret
 
 SkateFunction:
-	call .TryBike;;; Need to copy for getting on skateboard
+	call BikeFunction;;; Need to copy for getting on skateboard
+	ret
+
+BikeFunction:
+	call .TryBike
 	and $7f
 	ld [wFieldMoveSucceeded], a
 	ret
