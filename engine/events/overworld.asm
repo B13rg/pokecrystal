@@ -1626,6 +1626,12 @@ BikeFunction:
 	ld [wFieldMoveSucceeded], a
 	ret
 
+SkateFunction:
+	call .TryBike;;; Need to copy for getting on skateboard
+	and $7f
+	ld [wFieldMoveSucceeded], a
+	ret
+
 .TryBike:
 	call .CheckEnvironment
 	jr c, .CannotUseBike
