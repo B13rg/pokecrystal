@@ -176,7 +176,9 @@
 ### QoL Changes / Other
 
 - [ ] Bill calls to switch boxes when full
-- [ ] Revised shiny pallete
+  - [ ] engine/phone/scripts/bill.asm
+  - [ ] engine/pokemon/bills_pc.asm
+- [ ] Revised shiny pallate
 - [ ] Color coded starter poke balls
 - [ ] Stereo sound by default
 - [ ] Third Trainer Card page for Kanto badges. #44
@@ -228,6 +230,10 @@
 - [ ] Add move tester to pokegear to test type effectivness
 - [ ] In Goldenrod 1f, mother should reference underground store
 - [ ] add more books to book cases all over
+  - [ ] DifficultBookshelfText
+  - [ ] PictureBookshelfText
+  - [ ] MagazineBookshelfText
+  - [ ] MerchandiseShelfText
 - [x] In house with pidgey (biolet town?), have pidgey name be "Strawberry" after talking to girl.  Check scripting in flower shop
 - [ ] Change story so falkner is filling in for dad
    - [ ] add dad somewhere?
