@@ -7,4 +7,16 @@
 
 	page "attracted to its"
 	next "movement as it ran"
-	next "through prairies.@"
+	next "through prairies."
+
+	page "Its magnificent"
+	next "bark conveys a"
+	next "sense of majesty."
+
+	page "Anyone hearing it"
+	next "can't help but"
+	next "grovel before it."
+
+	page "Many people are "
+	next "enchanted by its"
+	next "grand mane.@"
