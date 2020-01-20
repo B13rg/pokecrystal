@@ -983,15 +983,7 @@ _AskForgetMoveText::
 	text_ram wMonOrItemNameBuffer
 	text " is"
 	line "trying to learn"
-	cont "@"
-	text_ram wStringBuffer2
-	text "."
-
-	para "But @"
-	text_ram wMonOrItemNameBuffer
-	text_start
-	line "can't learn more"
-	cont "than four moves."
+	cont "a new move."
 
 	para "Delete an older"
 	line "move to make room"
