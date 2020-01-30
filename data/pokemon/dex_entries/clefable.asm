@@ -7,4 +7,12 @@
 
 	page "type of fairy has"
 	next "a strong aversion"
-	next "to being seen.@"
+	next "to being seen."
+
+	page "Its very sensitive"
+	next "ears lets it dis-"
+	next "tinguish distant"
+
+	page "sounds. As a re-"
+	next "sult, it prefers"
+	next "quiet places.@"
