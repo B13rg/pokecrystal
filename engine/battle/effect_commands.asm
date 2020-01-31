@@ -2566,7 +2566,10 @@ DittoMetalPowder:
 .done
 	scf
 	rr c
-
+	ld a, [wLinkMode]
+	cp LINK_COLOSSEUM
+	scf	; Force RNG to be called
+	jr z, .nofix 	; Don't apply fix to link battles
 	ld a, HIGH(MAX_STAT_VALUE)
 	cp b
 	jr c, .cap
@@ -2577,6 +2580,7 @@ DittoMetalPowder:
 
 .cap
 	ld bc, MAX_STAT_VALUE
+.nofix
 	ret
 
 BattleCommand_DamageStats:
@@ -2829,6 +2833,11 @@ SpeciesItemBoost:
 ; Double the stat
 	sla l
 	rl h
+	ld a, [wLinkMode]
+	cp LINK_COLOSSEUM
+	scf	; Force RNG to be called
+	jr z, .nofix 	; Don't apply fix to link battles
+	
 	ld a, HIGH(MAX_STAT_VALUE)
 	cp h
 	jr c, .cap
@@ -2839,6 +2848,7 @@ SpeciesItemBoost:
 
 .cap
 	ld hl, MAX_STAT_VALUE
+.nofix
 	ret
 
 EnemyAttackDamage:
