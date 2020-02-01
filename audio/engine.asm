@@ -528,7 +528,7 @@ PlayDanger:
 	bit DANGER_ON_F, a
 	ret z
 	cp $ff
-	jr z, .Channel5
+	ret z
 
 	; Don't do anything if SFX is being played
 	ld d, a
