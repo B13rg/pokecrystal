@@ -577,33 +577,33 @@ StatsScreen_LoadGFX:
 	dec b
 	jr nz, .vertical_divider
 	ld de, .ExpPointStr
-	hlcoord 10, 9
+	hlcoord 10, 8
 	call PlaceString
-	hlcoord 17, 14
+	hlcoord 17, 11
 	call .PrintNextLevel
-	hlcoord 13, 10
+	hlcoord 13, 9
 	lb bc, 3, 7
 	ld de, wTempMonExp
 	call PrintNum
 	call .CalcExpToNextLevel
-	hlcoord 13, 13
+	hlcoord 13, 12
 	lb bc, 3, 7
 	ld de, wBuffer1
 	call PrintNum
 	ld de, .LevelUpStr
-	hlcoord 10, 12
+	hlcoord 10, 11
 	call PlaceString
-	ld de, .ToStr
-	hlcoord 14, 14
-	call PlaceString
-	hlcoord 11, 16
+	; ld de, .ToStr
+	; hlcoord 14, 14
+	; call PlaceString
+	hlcoord 11, 13
 	ld a, [wTempMonLevel]
 	ld b, a
 	ld de, wTempMonExp + 2
 	predef FillInExpBar
-	hlcoord 10, 16
+	hlcoord 10, 13
 	ld [hl], $40 ; left exp bar end cap
-	hlcoord 19, 16
+	hlcoord 19, 13
 	ld [hl], $41 ; right exp bar end cap
 	ret
 
@@ -661,7 +661,7 @@ StatsScreen_LoadGFX:
 	db "EXP POINTS@"
 
 .LevelUpStr:
-	db "LEVEL UP@"
+	db "EXP TO@"
 
 .ToStr:
 	db "TO@"
@@ -676,14 +676,11 @@ StatsScreen_LoadGFX:
 	call .GetItemName
 	hlcoord 8, 8
 	call PlaceString
-	ld de, .Move
-	hlcoord 0, 10
-	call PlaceString
 	ld hl, wTempMonMoves
 	ld de, wListMoves_MoveIndicesBuffer
 	ld bc, NUM_MOVES
 	call CopyBytes
-	hlcoord 8, 10
+	hlcoord 0, 10 ; Originally 8
 	ld a, SCREEN_WIDTH * 2
 	ld [wBuffer1], a
 	predef ListMoves
@@ -710,9 +707,6 @@ StatsScreen_LoadGFX:
 
 .ThreeDashes:
 	db "---@"
-
-.Move:
-	db "MOVE@"
 
 .BluePage:
 	call .PlaceOTInfo
