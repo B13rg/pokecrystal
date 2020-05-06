@@ -709,7 +709,6 @@ StatsScreen_LoadGFX:
 	db "---@"
 
 .BluePage:
-	call .PlaceOTInfo
 	hlcoord 10, 8
 	ld de, SCREEN_WIDTH
 	ld b, 10
@@ -724,14 +723,151 @@ StatsScreen_LoadGFX:
 	predef PrintTempMonStats
 	ret
 
+.OTNamePointers:
+	dw wPartyMonOT
+	dw wOTPartyMonOT
+	dw sBoxMonOT
+	dw wBufferMonOT
+
+.OrangePage:
+	call .PlaceCatchInfo
+	call .PlaceHappiness
+	call .PlaceOTInfo
+	hlcoord 10, 8
+	ld de, SCREEN_WIDTH
+	ld b, 7  ; Make line8 lines tall
+	ld a, $31 ; vertical divider
+.OrangePageVerticalDivider:
+	ld [hl], a
+	add hl, de
+	dec b
+	jr nz, .OrangePageVerticalDivider
+	ret
+
+.PlaceCatchInfo:
+	; Start by pacing data titles
+	ld de, CaughtLvlString
+	hlcoord 0, 11
+	call PlaceString
+	ld de, LocationString
+	hlcoord 0, 15
+	call PlaceString
+	; Now fill in the data
+	call .FetchCaughtInfo
+	ret
+
+.FetchCaughtInfo:
+	; Get caught data and place it in seer wram spots
+	ld a, MON_CAUGHTDATA
+	call GetPartyParamLocation
+	ld a, [hli]
+	ld [wSeerCaughtData], a
+	ld a, [hld]
+	ld [wSeerCaughtGender], a
+	; Now draw stuff to the screen
+	call .GetCaughtLevel
+	call .GetCaughtTime
+	call .GetCaughtLocation
+	ret
+
+.GetCaughtLevel:
+	; Backup out temp mon level
+	ld a, [wTempMonLevel]
+	push af
+	; caught level
+	; Limited to between 1 and 63 since it's a 6-bit quantity.
+	ld a, [wSeerCaughtData]
+	and CAUGHT_LEVEL_MASK
+	jr z, .unknown
+	cp CAUGHT_EGG_LEVEL ; egg marker value (1)
+	jr nz, .print
+	ld a, EGG_LEVEL ; egg hatch level
+
+.print
+	ld [wTempMonLevel], a
+	hlcoord 2, 12
+	call PrintLevel
+	; Restore temp mon level
+	pop af
+	ld [wTempMonLevel], a
+	ret
+
+.unknown
+	ld de, UnknownString
+	hlcoord 2, 12
+	call PlaceString
+	; Restore temp mon level
+	pop af
+	ld [wTempMonLevel], a
+	ret
+
+.GetCaughtTime:
+	ld a, [wSeerCaughtData]
+	and CAUGHT_TIME_MASK
+	jr z, .none
+	; rotate to the time string index
+	rlca
+	rlca
+	dec a	; decrement so it's 0 based
+	ld hl, TimeStrings
+	call GetNthString
+	ld d, h
+	ld e, l
+	hlcoord 2, 13
+	call PlaceString
+	and a
+	ret
+
+.none
+	ld de, UnknownString
+	hlcoord 2, 13
+	call PlaceString
+	ret
+
+.GetCaughtLocation:
+	; Catch location is stored along with gender
+	ld a, [wSeerCaughtGender]
+	and CAUGHT_LOCATION_MASK
+	jr z, .unknownLocation
+	cp EVENT_LOCATION
+	jr z, .unknownLocation
+	cp GIFT_LOCATION
+	jr z, .unknownLocation
+	ld e, a
+	farcall GetLandmarkName	; place location name in string buffer
+	ld de, wStringBuffer1
+	hlcoord 2, 16
+	call PlaceString
+	ret
+
+.unknownLocation
+	; Come here if the location is invalid
+	ld de, UnknownString
+	hlcoord 2, 16
+	call PlaceString
+	ret
+
+.PlaceHappiness:	
+	ld de, HappinessString
+	hlcoord 0, 8
+	call PlaceString
+	hlcoord 2, 9
+	ld de, wTempMonHappiness
+	lb bc, 1, 3	; 1 byte length, 3 digits
+	call PrintNum
+	ld de, HappinessOutOf
+	hlcoord 5, 9
+	call PlaceString
+	ret
+
 .PlaceOTInfo:
 	ld de, IDNoString
-	hlcoord 0, 9
+	hlcoord 11,9
 	call PlaceString
 	ld de, OTString
-	hlcoord 0, 12
+	hlcoord 11, 12
 	call PlaceString
-	hlcoord 2, 10
+	hlcoord 13, 13
 	lb bc, PRINTNUM_LEADINGZEROS | 2, 5
 	ld de, wTempMonID
 	call PrintNum
@@ -739,7 +875,7 @@ StatsScreen_LoadGFX:
 	call GetNicknamePointer
 	call CopyNickname
 	farcall CorrectNickErrors
-	hlcoord 2, 13
+	hlcoord 13, 10
 	call PlaceString
 	ld a, [wTempMonCaughtGender]
 	and a
@@ -748,28 +884,36 @@ StatsScreen_LoadGFX:
 	jr z, .done
 	and $80
 	ld a, "♂"
-	jr z, .got_gender
+	jr z, .got_gendere
 	ld a, "♀"
-.got_gender
-	hlcoord 9, 13
+.got_gendere
+	hlcoord 19, 13
 	ld [hl], a
 .done
 	ret
 
-.OTNamePointers:
-	dw wPartyMonOT
-	dw wOTPartyMonOT
-	dw sBoxMonOT
-	dw wBufferMonOT
+TimeStrings:
+	db "Morning@"
+	db "Day@"
+	db "Night@"
 
-.OrangePage:
-	; ld de, HelloWorldString
-	; hlcoord 1,9
-	; call PlaceString
-	ret
+UnknownString:
+	db "???@"
 
-; HelloWorldString:
-; 	db "Hello world!@"
+HappinessString:
+	db "Happiness@"
+
+HappinessOutOf:
+	db "/255@"
+
+CaughtLvlString:
+	db "Caught@"
+
+TimeString:
+	db "Time@"
+
+LocationString:
+	db "Location@"
 
 IDNoString:
 	db "<ID>№.@"
