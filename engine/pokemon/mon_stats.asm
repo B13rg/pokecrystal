@@ -121,6 +121,63 @@ PrintTempMonStats:
 	next "SPEED"
 	next "@"
 
+PrintTempMonDVStats:
+; Print wTempMon's stats at hl
+	ld bc, SCREEN_WIDTH
+	add hl, bc
+	lb bc, 1, 2	; 1 byte, 2 digits
+	ld de, wBuffer1
+	; wTempMonDVs Format
+	;0000|0000||0000|0000
+	;Atk  Def   Spd  Spc
+	; Attack
+	ld a, [wTempMonDVs]
+	; Rotate right 4 bits, then store in lower byte of de
+	rrca
+	rrca
+	rrca
+	rrca
+	and %00001111
+	ld [wBuffer1], a
+	ld de, wBuffer1
+	call .PrintStat
+	; Defense
+	ld a, [wTempMonDVs]
+	and %00001111	; zero out 4 most-sg bits
+	ld [wBuffer1], a
+	ld de, wBuffer1
+	call .PrintStat
+	; Special
+	ld a, [wTempMonDVs+1]
+	and %00001111	; zero out 4 most-sg bits
+	ld [wBuffer1], a
+	ld de, wBuffer1
+	; Call twice to print special stat twice, because it's combined
+	call .PrintStat
+	ld de, wBuffer1
+	and %00001111
+	ld [wBuffer1], a
+	call .PrintStat
+	; Speed
+	ld a, [wTempMonDVs+1]
+	rrca
+	rrca
+	rrca
+	rrca
+	and %00001111
+	ld [wBuffer1], a
+	ld de, wBuffer1
+	; jump because we don't need to move down anymore
+	jp PrintNum
+
+.PrintStat:
+	push hl
+	call PrintNum
+	pop hl
+	ld de, SCREEN_WIDTH * 2
+	add hl, de
+	ret
+
 GetGender:
 ; Return the gender of a given monster (wCurPartyMon/wCurOTMon/wCurWildMon).
 ; When calling this function, a should be set to an appropriate wMonType value.

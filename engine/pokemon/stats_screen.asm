@@ -709,18 +709,21 @@ StatsScreen_LoadGFX:
 	db "---@"
 
 .BluePage:
+	; Place stat titles
+	ld de, IVString
+	hlcoord 16, 8
+	call PlaceString
+	; --
+	ld de, StatString
 	hlcoord 10, 8
-	ld de, SCREEN_WIDTH
-	ld b, 10
-	ld a, $31 ; vertical divider
-.BluePageVerticalDivider:
-	ld [hl], a
-	add hl, de
-	dec b
-	jr nz, .BluePageVerticalDivider
-	hlcoord 11, 8
-	ld bc, 6
+	call PlaceString
+	; Print the base stats
+	hlcoord 2, 8
+	ld bc, 9	; stat x offset
 	predef PrintTempMonStats
+	; Print IV Values
+	hlcoord 16, 8
+	predef PrintTempMonDVStats
 	ret
 
 .OTNamePointers:
@@ -920,6 +923,12 @@ IDNoString:
 
 OTString:
 	db "OT/@"
+
+IVString:
+	db "IV@"
+
+StatString:
+	db "STAT@"
 
 StatsScreen_PlaceFrontpic:
 	ld hl, wTempMonDVs
