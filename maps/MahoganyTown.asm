@@ -227,6 +227,8 @@ MahoganyTownSignText:
 
 	para "Welcome to the"
 	line "Home of the Ninja"
+	
+	para "Jp: Choji Town"
 	done
 
 MahoganyTownCakeOfRageSignText:

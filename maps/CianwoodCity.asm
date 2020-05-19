@@ -343,6 +343,11 @@ CianwoodCitySignText:
 
 	para "A Port Surrounded"
 	line "by Rough Seas"
+
+	para "Jp: Tanba City"
+
+	para "A sea town of"
+	line "crashing waves."
 	done
 
 CianwoodGymSignText:

@@ -254,6 +254,12 @@ OlivineCitySignText:
 
 	para "The Port Closest"
 	line "to Foreign Lands"
+
+	para "Jp: Asagi City"
+
+	para "The port town with"
+	line "the scent of"
+	cont "sea breezes."
 	done
 
 OlivineCityPortSignText:

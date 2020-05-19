@@ -538,6 +538,8 @@ CherrygroveCitySignText:
 
 	para "The City of Cute,"
 	line "Fragrant Flowers"
+
+	para "Jp: Yoshino City"
 	done
 
 GuideGentsHouseSignText:

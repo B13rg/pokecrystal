@@ -265,6 +265,8 @@ NewBarkTownSignText:
 	para "The Town Where the"
 	line "Winds of a New"
 	cont "Beginning Blow"
+
+	para "Jp: Wakaba Town"
 	done
 
 NewBarkTownPlayersHouseSignText:

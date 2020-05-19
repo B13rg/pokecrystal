@@ -81,6 +81,15 @@ FuchsiaCitySignText:
 
 	para "Behold! It's"
 	line "Passion Pink!"
+
+	para "Jp: Sekichiku City"
+
+	para "Sekichiku is the"
+	line "color of"
+	cont "pink flora."
+
+	para "Bustling and"
+	line "passing city."
 	done
 
 FuchsiaGymSignText:

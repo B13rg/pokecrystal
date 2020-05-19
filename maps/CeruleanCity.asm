@@ -231,6 +231,15 @@ CeruleanCitySignText:
 
 	para "A Mysterious Blue"
 	line "Aura Surrounds It"
+
+	para "Jp: Hanada City"
+
+	para "Hanada is the"
+	line "color of"
+	cont "aqua mysteries."
+
+	para "The town of"
+	line "bursting water."
 	done
 
 CeruleanGymSignText:

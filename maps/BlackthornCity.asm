@@ -278,6 +278,15 @@ BlackthornCitySignText:
 
 	para "A Quiet Mountain"
 	line "Retreat"
+	
+	para "Jp: Fusube City"
+
+	para "A quiet city" 
+	line "standing among"
+	cont "the mountains."
+
+	para "The town of"
+	line "quiet mountains."
 	done
 
 BlackthornGymSignText:

@@ -187,6 +187,12 @@ ViridianCitySignText:
 
 	para "The Eternally"
 	line "Green Paradise"
+
+	para "Jp: Tokiwa City"
+
+	para "Tokiwa is the"
+	line "color of"
+	cont "green eternity."
 	done
 
 ViridianGymSignText:

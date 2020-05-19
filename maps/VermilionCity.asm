@@ -238,6 +238,15 @@ VermilionCitySignText:
 
 	para "The Port of"
 	line "Exquisite Sunsets"
+
+	para "Jp: Kuchiba City"
+
+	para "Kuchiba is the"
+	line "color of orange"
+	cont "sunsets."
+
+	para "The sunset-colored"
+	line "port town."
 	done
 
 VermilionGymSignText:

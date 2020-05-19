@@ -196,6 +196,16 @@ CeladonCitySignText:
 
 	para "The City of"
 	line "Rainbow Dreams"
+
+	para "Jp: Tamamushi City"
+
+	para "Tamamushi, the"
+	line "color of rainbow"
+	cont "dreams."
+
+	para "The large"
+	line "rainbow-colored"
+	cont "town."
 	done
 
 CeladonGymSignText:

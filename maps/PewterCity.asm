@@ -117,6 +117,14 @@ PewterCityGrampsText_GotSilverWing:
 PewterCitySignText:
 	text "PEWTER CITY"
 	line "A Stone Gray City"
+
+	para "Jp: Nibi City"
+
+	para "Nibi is the color"
+	line "of grey stone."
+
+	para "The town of rugged"
+	line "mountains."
 	done
 
 PewterGymSignText:

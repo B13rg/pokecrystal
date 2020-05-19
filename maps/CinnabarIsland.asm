@@ -123,6 +123,14 @@ CinnabarIslandSignText:
 
 	para "The Fiery Town of"
 	line "Burning Desire"
+
+	para "Jp: Guren Island"
+
+	para "Guren's red is the"
+	line "color of passion."
+
+	para "The ravaged town"
+	line "of the past."
 	done
 
 CinnabarIsland_MapEvents:
