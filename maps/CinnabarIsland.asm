@@ -1,3 +1,18 @@
+;tile block id
+BASE_DOOR_OPEN   EQU $06
+BASE_DOOR_CLOSED   EQU $57
+
+ugdoor: MACRO
+\1_YCOORD EQU \2
+\1_XCOORD EQU \3
+ENDM
+
+	ugdoor BASE_ENTRANCE,  $08, $04
+
+doorstate: MACRO
+	changeblock UGDOOR_\1_YCOORD, UGDOOR_\1_XCOORD, UNDERGROUND_DOOR_\2
+ENDM
+
 	object_const_def ; object_event constants
 	const CINNABARISLAND_BLUE
 
@@ -38,6 +53,39 @@ CinnabarIslandHiddenRareCandy:
 CinnabarIslandBlueTeleport:
 	teleport_from
 	step_end
+
+RocketBaseScript:
+	opentext
+	checkevent EVENT_SWITCH_1
+	iftrue .On
+	writetext SwitchText_OffTurnOn
+	yesorno
+	iffalse RocketBaseSwitch_DontToggle
+	setevent EVENT_SWITCH_1
+	sjump OpenBase
+
+.On:
+	writetext SwitchText_OnTurnOff
+	yesorno
+	iffalse RocketBaseSwitch_DontToggle
+	clearevent EVENT_SWITCH_1
+	sjump CloseBase
+
+.OpenBase:
+	doorstate 1, OPEN
+	sjump .UpdateMap
+
+.CloseBase:
+	doorstate 1, CLOSED
+
+.UpdateMap:
+	reloadmappart
+	closetext
+	end
+
+RocketBaseSwitch_DontToggle:
+	closetext
+	end
 
 CinnabarIslandBlueText:
 	text "Who are you?"
@@ -125,19 +173,31 @@ CinnabarIslandSignText:
 	line "Burning Desire"
 	done
 
+SwitchText_OffTurnOn:
+	text "It's OFF."
+	line "Turn it ON?"
+	done
+
+SwitchText_OnTurnOff:
+	text "It's ON."
+	line "Turn it OFF?"
+	done
+
 CinnabarIsland_MapEvents:
 	db 0, 0 ; filler
 
-	db 1 ; warp events
+	db 2 ; warp events
 	warp_event 11, 11, CINNABAR_POKECENTER_1F, 1
+	warp_event  8,  5, ROCKET_CINNABAR_BASE_ENTRANCE, 1
 
 	db 0 ; coord events
 
-	db 4 ; bg events
+	db 5 ; bg events
 	bg_event 12, 11, BGEVENT_READ, CinnabarIslandPokecenterSign
 	bg_event  9, 11, BGEVENT_READ, CinnabarIslandGymSign
 	bg_event  7,  7, BGEVENT_READ, CinnabarIslandSign
 	bg_event  9,  1, BGEVENT_ITEM, CinnabarIslandHiddenRareCandy
+	bg_event 11,  1, BGEVENT_READ, RocketBaseScript
 
 	db 1 ; object events
 	object_event  9,  6, SPRITE_BLUE, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CinnabarIslandBlue, EVENT_BLUE_IN_CINNABAR
