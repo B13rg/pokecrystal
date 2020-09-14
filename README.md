@@ -41,12 +41,14 @@ To set up the repository, see [INSTALL.md](INSTALL.md).
 - [x] Hold 'B' While walking to run
 - [x] Get through Ilex forest without cut
 - [x] Fish in Cerulean Gym again like in Gen. 1
-- [ ] Gain experience from catching pokemon
+- [x] Gain experience from catching pokemon
 - [x] Pokeballs in Elm's Lab are color coordinated
+- [x] Saying that you know how to use the pokegear to mom skips the pokegear lesson
 
 ### Map Changes
 
 - [x] Surf from Route 34 to Ilex Forest
+- [x] Brass Tower → Gong Tower (かね kane can mean 金 "metal" or 鉦, a gong-like bell).
 
 ### Pokemon
 

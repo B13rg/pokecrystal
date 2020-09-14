@@ -7,47 +7,6 @@ SHINY_SPD_VAL2 EQU 15
 SHINY_SPC_VAL EQU 10
 
 CheckShininess:
-; Check if a mon is shiny by DVs at bc.
-; 1/512 chance
-; Return carry if shiny.
-
-	ld l, c
-	ld h, b
-
-; Attack 8/16 (2,3,6,7,10,11,14,15)
-	ld a, [hl]
-	and 1 << SHINY_ATK_BIT
-	jr z, .NotShiny
-
-; Defense 8/16 (4,5,6,7,12,13,14,15)
-	ld a, [hli]
-	and 1 << SHINY_DEF_BIT
-	jr z, .NotShiny
-
-; Special (1/16) 10
-	ld a, [hl]
-	and $f
-	cp  SHINY_SPC_VAL
-	jr nz, .NotShiny
-
-; Speed (2/16) 11, 15
-	ld a, [hl]
-	and $f
-	cp  SHINY_SPD_VAL1
-	jr z, .Shiny
-	cp  SHINY_SPD_VAL2
-	jr nz, .NotShiny
-
-
-.Shiny:
-	scf
-	ret
-
-.NotShiny:
-	and a
-	ret
-
-Unused_CheckShininess:
 ; Return carry if the DVs at hl are all 10 or higher.
 
 ; Attack
@@ -259,7 +218,7 @@ LoadMonPaletteAsNthBGPal:
 	inc hl
 	inc hl
 
-got_palette_pointer_8bd7
+got_palette_pointer_8bd7:
 	push hl
 	ld hl, wBGPals1
 	ld de, 1 palettes
