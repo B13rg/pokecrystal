@@ -12,6 +12,19 @@ BattleCommand_BellyDrum:
 	callfar CheckUserHasEnoughHP
 	jr nc, .failed
 
+	ld a, [wLinkMode]
+	cp LINK_COLOSSEUM
+	scf	; Force RNG to be called
+	jr z, .nofix 	; Don't apply fix to link battles
+
+	push bc
+	call BattleCommand_AttackUp2
+	pop bc
+	ld a, [wAttackMissed]
+	and a
+	jr nz, .failed
+
+.nofix
 	push bc
 	call AnimateCurrentMove
 	pop bc
