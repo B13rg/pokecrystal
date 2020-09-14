@@ -21,6 +21,13 @@
 *.sa*
 *.sg1
 
+!tools/saves/**/*.sgm
+!tools/saves/**/*.sav
+!tools/saves/**/*.rtc
+!tools/saves/**/*.sn*
+!tools/saves/**/*.sa*
+!tools/saves/**/*.sg1
+
 # rgbds extras
 *.map
 *.sym
@@ -49,3 +56,5 @@ gfx/pokemon/*/bitmask.asm
 gfx/pokemon/*/frames.asm
 !gfx/pokemon/unown/bitmask.asm
 !gfx/pokemon/unown/frames.asm
+
+
