@@ -305,7 +305,7 @@ MoveDeletersHouseSignText:
 
 DragonDensSignText:
 	text "DRAGON'S DEN"
-	line "AHEAD"
+	line "ENTRANCE"
 	done
 
 BlackthornCityTrainerTipsText:
