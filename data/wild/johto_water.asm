@@ -196,9 +196,9 @@ JohtoWaterWildMons:
 
 	map_id CIANWOOD_CITY
 	db 6 percent ; encounter rate
-	db 20, TENTACOOL
-	db 15, TENTACOOL
-	db 20, TENTACRUEL
+	db 20, KRABBY
+	db 15, STARYU
+	db 20, CORSOLA
 
 	map_id OLIVINE_CITY
 	db 6 percent ; encounter rate
