@@ -176,6 +176,12 @@ JohtoWaterWildMons:
 	db 15, MAGIKARP
 	db 5, MAGIKARP
 
+	map_id ROUTE_47
+	db 6 percent ; encounter rate
+	db 20, TENTACOOL
+	db 20, TENTACRUEL
+	db 20, MANTINE
+
 	map_id NEW_BARK_TOWN
 	db 6 percent ; encounter rate
 	db 20, TENTACOOL
@@ -196,9 +202,9 @@ JohtoWaterWildMons:
 
 	map_id CIANWOOD_CITY
 	db 6 percent ; encounter rate
-	db 20, TENTACOOL
-	db 15, TENTACOOL
-	db 20, TENTACRUEL
+	db 20, KRABBY
+	db 15, STARYU
+	db 20, CORSOLA
 
 	map_id OLIVINE_CITY
 	db 6 percent ; encounter rate

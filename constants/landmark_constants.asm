@@ -20,6 +20,7 @@
 	const ROUTE_34          ; 0f
 	const GOLDENROD_CITY    ; 10
 	const RADIO_TOWER       ; 11
+	const GOLDENROD_PIER
 	const ROUTE_35          ; 12
 	const NATIONAL_PARK     ; 13
 	const ROUTE_36          ; 14
@@ -36,19 +37,20 @@
 	const WHIRL_ISLANDS     ; 1f
 	const ROUTE_41          ; 20
 	const CIANWOOD_CITY     ; 21
-	const ROUTE_42          ; 22
-	const MT_MORTAR         ; 23
-	const MAHOGANY_TOWN     ; 24
-	const ROUTE_43          ; 25
-	const LAKE_OF_RAGE      ; 26
-	const ROUTE_44          ; 27
-	const ICE_PATH          ; 28
-	const BLACKTHORN_CITY   ; 29
-	const DRAGONS_DEN       ; 2a
-	const ROUTE_45          ; 2b
-	const DARK_CAVE         ; 2c
-	const ROUTE_46          ; 2d
-	const SILVER_CAVE       ; 2e
+	const ROUTE_47          ; 22
+	const ROUTE_42          ; 23
+	const MT_MORTAR         ; 24
+	const MAHOGANY_TOWN     ; 25
+	const ROUTE_43          ; 26
+	const LAKE_OF_RAGE      ; 27
+	const ROUTE_44          ; 28
+	const ICE_PATH          ; 29
+	const BLACKTHORN_CITY   ; 2a
+	const DRAGONS_DEN       ; 2b
+	const ROUTE_45          ; 2c
+	const DARK_CAVE         ; 2d
+	const ROUTE_46          ; 2e
+	const SILVER_CAVE       ; 2f
 
 KANTO_LANDMARK EQU const_value
 	const PALLET_TOWN       ; 2f

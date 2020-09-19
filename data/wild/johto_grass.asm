@@ -1649,4 +1649,31 @@ JohtoGrassWildMons:
 	db 44, GOLBAT
 	db 44, GOLBAT
 
+	map_id CIANWOOD_CITY
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 21, TANGELA
+	db 22, SKIPLOOM
+	db 22, SKIPLOOM
+	db 20, ODDISH
+	db 21, ODDISH
+	db 23, GLOOM
+	db 24, GLOOM
+	; day
+	db 21, TANGELA
+	db 22, SKIPLOOM
+	db 22, SKIPLOOM
+	db 21, ODDISH
+	db 22, ODDISH
+	db 23, GLOOM
+	db 23, BELLOSSOM
+	; nite
+	db 21, TANGELA
+	db 22, SHUCKLE
+	db 20, ZUBAT
+	db 24, SHUCKLE
+	db 20, ZUBAT
+	db 24, GOLBAT
+	db 24, GOLBAT
+
 	db -1 ; end

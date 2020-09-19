@@ -152,6 +152,9 @@
 - [ ] Add visible Iv/ev stats
 - [ ] add pokemon to more areas (variety)
 - [ ] spruce up starter move levels
+- [x] get through ilex forest without cut #5
+  - [x] Connect west water of ilex to ocean to the left
+- [x] Surf from route 34 to ilex forest
 - [ ] fly to indigo plateau #6
 - [ ] make payday a field move (get random amount of money 20-500)
 - [ ] add ability to name mother #40
@@ -165,7 +168,10 @@
 ### QoL Changes / Other
 
 - [ ] Bill calls to switch boxes when full
-- [ ] Revised shiny pallete
+  - [ ] engine/phone/scripts/bill.asm
+  - [ ] engine/pokemon/bills_pc.asm
+- [ ] Revised shiny pallate
+- [ ] Color coded starter poke balls
 - [ ] Stereo sound by default
 - [ ] Third Trainer Card page for Kanto badges. #44
 - [ ] Fourth stats page for capture data formerly told by the Poké Seer. #45
@@ -211,6 +217,11 @@
 - [ ] Add move tester to pokegear to test type effectivness
 - [ ] In Goldenrod 1f, mother should reference underground store
 - [ ] add more books to book cases all over
+  - [ ] DifficultBookshelfText
+  - [ ] PictureBookshelfText
+  - [ ] MagazineBookshelfText
+  - [ ] MerchandiseShelfText
+- [x] In house with pidgey (biolet town?), have pidgey name be "Strawberry" after talking to girl.  Check scripting in flower shop
 - [ ] Change story so falkner is filling in for dad
    - [ ] add dad somewhere?
 - [ ] pluralize "Move" on stats screen

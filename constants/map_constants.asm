@@ -268,6 +268,7 @@ ENDM
 	map_const ILEX_FOREST_AZALEA_GATE,                      5,  4 ; 22
 	map_const ROUTE_34_ILEX_FOREST_GATE,                    5,  4 ; 23
 	map_const DAY_CARE,                                     5,  4 ; 24
+	map_const GOLDENROD_PIER,                              10, 10 ; 25
 
 	newgroup                                                      ; 12
 
@@ -427,6 +428,7 @@ ENDM
 	map_const BATTLE_TOWER_HALLWAY,                        11,  2 ; 14
 	map_const ROUTE_40_BATTLE_TOWER_GATE,                   5,  4 ; 15
 	map_const BATTLE_TOWER_OUTSIDE,                        10, 14 ; 16
+	map_const ROUTE_47,                                    25, 20 ; 17
 
 	newgroup                                                      ; 23
 

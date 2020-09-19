@@ -572,7 +572,7 @@ GoldenrodCity_MapEvents:
 
 	db 13 ; bg events
 	bg_event 10, 14, BGEVENT_READ, GoldenrodCityStationSign
-	bg_event  4, 17, BGEVENT_READ, GoldenrodCityRadioTowerSign
+	bg_event  3, 15, BGEVENT_READ, GoldenrodCityRadioTowerSign
 	bg_event 26, 27, BGEVENT_READ, GoldenrodDeptStoreSign
 	bg_event 26,  9, BGEVENT_READ, GoldenrodGymSign
 	bg_event 22, 18, BGEVENT_READ, GoldenrodCitySign

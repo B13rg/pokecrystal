@@ -17,6 +17,7 @@ INCLUDE "maps/GoldenrodDeptStore6F.asm"
 INCLUDE "maps/GoldenrodDeptStoreElevator.asm"
 INCLUDE "maps/GoldenrodDeptStoreRoof.asm"
 INCLUDE "maps/GoldenrodGameCorner.asm"
+INCLUDE "maps/GoldenrodPier.asm"
 
 
 SECTION "Map Scripts 2", ROMX
@@ -237,6 +238,7 @@ INCLUDE "maps/BattleTowerElevator.asm"
 INCLUDE "maps/BattleTowerHallway.asm"
 INCLUDE "maps/Route40BattleTowerGate.asm"
 INCLUDE "maps/BattleTowerOutside.asm"
+INCLUDE "maps/Route47.asm"
 
 
 SECTION "Map Scripts 13", ROMX
