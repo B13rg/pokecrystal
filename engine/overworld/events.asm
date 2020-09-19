@@ -135,10 +135,10 @@ EnterMap:
 	ld [wMapStatus], a
 	ret
 
-UnusedWait30Frames:
-	ld c, 30
-	call DelayFrames
-	ret
+;UnusedWait30Frames:
+	;ld c, 30
+;	call DelayFrames
+;	ret
 
 HandleMap:
 	call ResetOverworldDelay
@@ -481,10 +481,10 @@ CheckTimeEvents:
 	scf
 	ret
 
-.unused
-	ld a, 8
-	scf
-	ret
+; .unused
+; 	ld a, 8
+; 	scf
+; 	ret
 
 OWPlayerInput:
 	call PlayerMovement
@@ -929,10 +929,10 @@ CountStep:
 	ret
 
 ; unused
-.unreferenced
-	ld a, PLAYEREVENT_WHITEOUT
-	scf
-	ret
+; .unreferenced
+; 	ld a, PLAYEREVENT_WHITEOUT
+; 	scf
+; 	ret
 
 DoRepelStep:
 	ld a, [wRepelEffect]
@@ -992,7 +992,7 @@ Invalid_0x96c2d:
 	end
 
 ; unused
-	end
+	; end
 
 HatchEggScript:
 	callasm OverworldHatchEgg
