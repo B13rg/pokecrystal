@@ -1,16 +1,16 @@
 	object_const_def ; object_event constants
 
-Route47_MapScripts:
+GoldenrodPier_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
 
-Route47_MapEvents:
+GoldenrodPier_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event 43, 22, GOLDENROD_PIER, 1
-	warp_event 43, 23, GOLDENROD_PIER, 2
+	warp_event 4, 8, ROUTE_47, 1
+	warp_event 4, 9, ROUTE_47, 2
 
 	db 0 ; coord events
 

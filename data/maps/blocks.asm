@@ -1052,3 +1052,6 @@ SECTION "Map Blocks 4", ROMX
 
 Route47_Blocks:
 	INCBIN "maps/Route47.blk"
+
+GoldenrodPier_Blocks:
+	INCBIN "maps/GoldenrodPier.blk"

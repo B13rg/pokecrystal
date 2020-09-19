@@ -20,6 +20,7 @@
 	const ROUTE_34          ; 0f
 	const GOLDENROD_CITY    ; 10
 	const RADIO_TOWER       ; 11
+	const GOLDENROD_PIER
 	const ROUTE_35          ; 12
 	const NATIONAL_PARK     ; 13
 	const ROUTE_36          ; 14
