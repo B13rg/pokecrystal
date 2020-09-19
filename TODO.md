@@ -4,7 +4,6 @@
 
 ### Battles
 
-- [ ] Gain experience from catching pokemon #9
 - [ ] Play low pitched cry when pokemon faints
 - [ ] NPC's can have shiny pokemon #24
 - [ ] Light ball doubles both attach and spc. attack
@@ -31,9 +30,7 @@
   - [ ] Biker
   - [ ] Engineer
   - [ ] Supernerd
-  - [x] Swimmer_f
   - [ ] Teacher f/m
-  - [ ] Beauty
   - [ ] Professional m/f
 - [ ] add depth to battles (enemy move combos, interesting teams)
   - [ ] give enemies more variety in their teams #27
@@ -47,12 +44,9 @@
 - [ ] Investigate crystal clear gym leveling and rematch
   - [ ] Rematch more powerful elite 4 after earning all 16 badges #30
   - [ ] After earning 16 badges and beating elite 4, all gym leaders are more powerful #29
-- [ ] Janine's pink badge is called the Marsh Badge; Sabrina's gold badge is called the Soul #31
 - [ ] Add send-out animation
   - [ ] Add back hoot hoot send-out animation to more pokemon (dark ?)
-- [ ] Add symbol to show if wild pokemon is caught #48
 - [ ] Split special
-- [ ] Starters should learn Same type moves earlier
 
 ### Overworld
 
@@ -62,13 +56,10 @@
   - [ ] seer
   - [ ] mystery gift
   - [ ] odd egg giver
-- [ ] Brass Tower → Gong Tower (かね kane can mean 金 "metal" or 鉦, a gong-like bell).
 - [ ] add many more floors to bellsprout tower #15
 - [ ] All legendaries respawn after beating elite 4 #16
 - [ ] Move reminder in same house as move deleter 
 - [ ] Fly to the Rock Tunnel/Power Plant Pokémon Center. #36
-- [ ] Fishing works 75% of the time, not 50%. #17
-- [ ] GS ball and Celibi side event is available #18
 - [ ] Restore poke blue map elements #35
   - [ ] Pokemon Safari
   - [ ] Silf co
@@ -89,6 +80,7 @@
   - [ ] Have geovanni return
   - [ ] Add back team rocket base to somewhere
   - [ ] Improve team rocket story
+  - [ ] Rival is son of Giovanni
 - [ ] Trainer school #12
   - [ ] Emphasize type matchups
   - [ ] use blackboard
@@ -128,8 +120,7 @@
 - [ ] Odd egg is 50% shiny #22
 - [ ] Prof. Oaks aids give you items as you complete pokedex
 - [ ] Trees randomly give 1 2 or 3 berries
-- [ ] Unlimited use TMs
-- [ ] Hold b to use running shoes, setting to always use them #19
+- [ ] Add setting to always use running shoes them #19
 - [ ] Continious repel system
 - [ ] Surf at bicycle speed #47
 - [ ] The Skateboard returns #20
@@ -138,7 +129,7 @@
 
 ### Pokemon 
 
-- [ ] Update pokemon sprites with JPN #7
+- [ ] Update pokemon battle sprites with JPN #7
   - [ ] Lanturn
   - [ ] Pichu
   - [ ] Sneasel
@@ -165,7 +156,6 @@
   - [x] Connect west water of ilex to ocean to the left
 - [x] Surf from route 34 to ilex forest
 - [ ] fly to indigo plateau #6
-- [ ] rage candy bar -> cake of rage #8
 - [ ] make payday a field move (get random amount of money 20-500)
 - [ ] add ability to name mother #40
 - [ ] have legendary birds roam?
@@ -187,18 +177,14 @@
 - [ ] Fourth stats page for capture data formerly told by the Poké Seer. #45
   - [ ] Also poke happiness
 - [ ] Move stats include type, category, power, and accuracy. #46
-- [x] turn around after getting healed in pokecenter
-- [ ] run holding b #19
 - [ ] follower pokemon (stretch)
 - [ ] "Mother" gigas music for mewtwo encounter
-- [ ] Koga -> marsh badge, sabrina -> soul badge #31
-- [ ] Double-check day/night lenghts
+- [ ] Double-check day/night lengths
   - [ ] Morning 4:00-11:59
   - [ ] Day 12:00-7:59
   - [ ] Night 8:00-3:59
   - [ ] Speed up clock a lot, full cycle every 1-3 hours?
-- [ ] Add ability to set clock at anytime #42
-  - [ ] Call "time man" on phone to set time
+- [ ] Call "time man" on phone to set time
 - [ ] Show time when pokemon can be encountered in the wild in the pokedex
 - [ ] More boxes/ box spots
 - [ ] More item slots
@@ -208,7 +194,6 @@
 
 ### Bug fixes
 
-- [x] Fishing returns to Cerulean Gym #43
 - [ ] Catch rate fixes
 - [ ] Expshare formula fixes
 - [ ] Menu scrolling oversight
@@ -225,7 +210,7 @@
 - [ ] Show all six pokemon when depositing into PC, so scrolling isn't needed, except to select "back"
 - [ ] Use tall grass sprite in more areas (coastal?)
 - [ ] Give pokefan william more color to sprite
-- [ ] Create story reason for legendaries to stat aapearing, maybe combining bell/wing together?
+- [ ] Create story reason for legendaries to start aapearing, maybe combining bell/wing together?
 - [ ] Remove limit to # of numbers in pokegear (at least increase)
 - [ ] Use pokegear to set time (either through a time function or by calling someone)
 - [ ] Allow player to ignore phone calls
@@ -239,7 +224,6 @@
 - [x] In house with pidgey (biolet town?), have pidgey name be "Strawberry" after talking to girl.  Check scripting in flower shop
 - [ ] Change story so falkner is filling in for dad
    - [ ] add dad somewhere?
-- [ ] unlimited use TMs
 - [ ] pluralize "Move" on stats screen
 - [ ] connect item title and name with line (pokemon stats screen)
 - [ ] Fly locations:
@@ -252,6 +236,41 @@
 - [ ] Underground rocket base on cinnebar?
 - [ ] More type advantage/disadvantage on early routes
 - [ ] Modify wild pokemon lists to end with 0 instead of being a set number: https://github.com/pret/pokecrystal/wiki/Improve-the-outdoor-sprite-system#1-make-outdoor-sprite-sets-variable-length-ending-with-0
+- [ ] Make wooper do battle entry animation when shown by oak at beginning
+- [ ] Add more color to Elm's lab pallet
+- [ ] Re-add lavender town pokemon tower, maybe move undergound or to separate area
+- [ ] Fix overworld pokemon sprites
+  - [ ] Persian in Natl. Park
+  - [ ] Murkrow in rocket hideout is moltres
+  - [ ] Ampharos on top of lighthouse is generic
+- [ ] Have special berry tree sprite if berries are available
+- [ ] Fix moon balls
+- [ ] Fix status effects on catch rate
+- [ ] Add honey back
+- [ ] Give skateboard pkmn blue music
+- [ ] Allude to prototype names in town signs
+- [ ] Add pharmacy to eukreat
+- [ ] Add back memory game to game corners
+- [ ] Skateboard movement like ice (one direction until wall)
+- [ ] Give pichu to pokefan on route before olivine
+- [ ] auto organize items
+  - [ ] Give ability to open sort menu with SELECT
+    - [ ] Alpha
+    - [ ] Type
+  - [ ] Allow unlimited items
+- [ ] add mail pocket, berry pocket, healing/status pocket
+- [ ] Improve Cianwood
+  - [ ] Add port or pier to Cianwood
+  - [ ] Link Cianwood to goldenrod
+  - [ ] Add puzzle and more battles to gym
+  - [ ] Add area to north or south to train/meet suicune
+- [ ] Wild pokemon hold items more often
+- [ ] Trainer pokemon hold items more often
+- [ ] Trainer sprites are cut off at end of battle
+- [ ] Make pokemon from in-game trades better than wild pokemon
+  - [ ] Egg moves, stats
+- [ ] Be able to fish while surfing
+- [ ] Fly from top of Goldenrod department store
 
 
 ## Implementation notes

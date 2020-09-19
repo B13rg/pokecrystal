@@ -475,6 +475,11 @@ _MartHowManyText::
 	text "How many?"
 	done
 
+_AlreadyHaveTMText::
+	text "You already have"
+	line "that TM."
+	done
+
 _MartFinalPriceText::
 	text_decimal wItemQuantityChangeBuffer, 1, 2
 	text " @"
@@ -895,6 +900,11 @@ _PhoneWrongNumberText::
 	line "number!"
 	done
 
+_PhoneAskToAnswerText::
+	text "Would you like to"
+	line "answer the phone?"
+	done
+
 _PhoneClickText::
 	text "Click!"
 	done
@@ -923,22 +933,12 @@ UnknownText_0x1c55d6::
 	done
 
 _PasswordAskResetText::
-	text "Password OK."
-	line "Select CONTINUE &"
-	cont "reset settings."
-	prompt
-
-_PasswordWrongText::
-	text "Wrong password!"
+	text "Select CONTINUE &"
+	line "reset the time."
 	prompt
 
 _PasswordAskResetClockText::
 	text "Reset the clock?"
-	done
-
-_PasswordAskEnterText::
-	text "Please enter the"
-	line "password."
 	done
 
 _ClearAllSaveDataText::
@@ -983,15 +983,7 @@ _AskForgetMoveText::
 	text_ram wMonOrItemNameBuffer
 	text " is"
 	line "trying to learn"
-	cont "@"
-	text_ram wStringBuffer2
-	text "."
-
-	para "But @"
-	text_ram wMonOrItemNameBuffer
-	text_start
-	line "can't learn more"
-	cont "than four moves."
+	cont "a new move."
 
 	para "Delete an older"
 	line "move to make room"

@@ -4,6 +4,7 @@ TalkToTrainerScript::
 	iftrue AlreadyBeatenTrainerScript
 	loadtemptrainer
 	encountermusic
+	opentext
 	sjump StartBattleWithMapTrainerScript
 
 SeenByTrainerScript::
@@ -14,10 +15,10 @@ SeenByTrainerScript::
 	applymovementlasttalked wMovementBuffer
 	writeobjectxy LAST_TALKED
 	faceobject PLAYER, LAST_TALKED
+	opentext
 	sjump StartBattleWithMapTrainerScript
 
 StartBattleWithMapTrainerScript:
-	opentext
 	trainertext TRAINERTEXT_SEEN
 	waitbutton
 	closetext
@@ -25,7 +26,19 @@ StartBattleWithMapTrainerScript:
 	startbattle
 	reloadmapafterbattle
 	trainerflagaction SET_FLAG
+	scripttalkafter
 	loadmem wRunningTrainerBattleScript, -1
+	end
 
 AlreadyBeatenTrainerScript:
+	opentext
+	writetext .RebattleText
+	yesorno
+	iftrue StartBattleWithMapTrainerScript
+	closetext
 	scripttalkafter
+	end
+
+.RebattleText:
+	text_far _RebattleText
+	text_end
