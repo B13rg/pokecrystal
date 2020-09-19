@@ -120,7 +120,7 @@ Mobile_InitPartyMenuBGPal71:
 
 PartyMenu_InitAnimatedMonIcon:
 	call InitPartyMenuIcon
-	call .SpawnItemIcon
+	;call .SpawnItemIcon
 	call SetPartyMonIconAnimSpeed
 	ret
 

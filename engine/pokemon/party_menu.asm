@@ -77,6 +77,7 @@ WritePartyMenuTilemap:
 	dw PlacePartyMonEvoStoneCompatibility
 	dw PlacePartyMonGender
 	dw PlacePartyMonMobileBattleSelection
+	DW PlacePartyMonItemIcon
 
 PlacePartyNicknames:
 	hlcoord 3, 1
@@ -549,6 +550,62 @@ PlacePartyMonMobileBattleSelection:
 	db "けってい　　やめる@" ; Quit
 .Strings_1_2_3:
 	db "１@", "２@", "３@" ; 1st, 2nd, 3rd
+
+PlacePartyMonItemIcon:
+	; Check that we have part pokemon
+	ld a, [wPartyCount]
+	and a
+	ret z
+	; Load the number of pokemon into c for loop
+	ld c, a
+	; set initial draw coordinates
+	hlcoord 5, 2
+.loop
+	; preserve registers for loop
+	push bc
+	push hl
+	; Eggs can't hold items
+	call PartyMenuCheckEgg
+	jr z, .next
+	push hl
+	ld a, b
+	; First load the size of the partmon struct into bc
+	ld bc, PARTYMON_STRUCT_LENGTH
+	; load the location of the item within the struct to hl
+	ld hl, wPartyMon1Item
+	call AddNTimes	; add bc * a to hl
+	; hl now holds the location of current pkmn's item
+	; load the item value into a
+	ld a, [hl]
+	; if a is 0 (no item), go to next pokemon
+	and a
+	jr z, .next
+	; store registers once more
+	push hl
+	push bc
+	; load item index into d for ItemIsMail call
+	ld d, a
+	callfar ItemIsMail
+	; restore registers
+	pop bc
+	pop hl
+	jr c, .mail
+	;DRAW ITEM ICON HERE
+
+	jr .next
+.mail
+	; DRAW MAIL ICON HERE
+
+
+.next
+	pop hl
+	ld de, SCREEN_WIDTH * 2
+	add hl, de
+	pop bc
+	inc b
+	dec c
+	jr nz, .loop
+	ret
 
 PartyMenuCheckEgg:
 	ld a, LOW(wPartySpecies)
