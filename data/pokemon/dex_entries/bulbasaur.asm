@@ -1,7 +1,15 @@
 	db "SEED@" ; species name
 	dw 204, 150 ; height, weight
 
-	db   "While it is young,"
+	db   "It carries a seed"
+	next "on its back right"
+	next "from birth. As it"
+
+	page "grows older, the"
+	next "seed also grows"
+	next "larger."
+	
+	page "While it is young,"
 	next "it uses the"
 	next "nutrients that are"
 

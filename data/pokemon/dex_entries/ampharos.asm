@@ -7,4 +7,11 @@
 
 	page "can be seen from"
 	next "far away on the"
-	next "ocean's surface.@"
+	next "ocean's surface."
+
+	page "It has also been"
+	next "treasured since"
+	next "ancient times as a"
+	
+	page "beacon for lost"
+	next "people.@"

@@ -7,4 +7,12 @@
 
 	page "will burn vigor-"
 	next "ously, even if it"
-	next "gets a bit wet.@"
+	next "gets a bit wet."
+
+	page "The flame on its"
+	next "tail indicates the"
+	next "strength of its"
+
+	page "life force. If it"
+	next "is weak, the flame"
+	next "also burns weakly.@"

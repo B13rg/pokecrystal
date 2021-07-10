@@ -7,4 +7,12 @@
 
 	page "causes anyone who"
 	next "smells it to"
-	next "become energetic.@"
+	next "become energetic."
+
+	page "Sniffing it can"
+	next "also make you want"
+	next "to fight. The"
+
+	page "aroma can also act"
+	next "as a stimulant to"
+	next "restore health.@"
