@@ -253,6 +253,8 @@ VioletCitySignText:
 
 	para "The City of"
 	line "Nostalgic Scents"
+
+	para "Jp: Kikyo City"
 	done
 
 VioletGymSignText:

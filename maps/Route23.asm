@@ -18,6 +18,15 @@ IndigoPlateauSignText:
 	line "for Trainers!"
 
 	para "#MON LEAGUE HQ"
+
+	para "Jp: Sekiei Plateau"
+
+	para "The #MON Trainer's"
+	line "zenith!"
+
+	para "The highest"
+	line "organization on"
+	cont "#MON"
 	done
 
 Route23_MapEvents:

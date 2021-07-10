@@ -52,6 +52,12 @@ PalletTownSignText:
 
 	para "A Tranquil Setting"
 	line "of Peace & Purity"
+
+	para "Jp: Masara Town"
+
+	para "Masara is the"
+	line "color of pure-"
+	cont "white beginnings."
 	done
 
 RedsHouseSignText:

@@ -222,6 +222,13 @@ EcruteakCitySignText:
 
 	para "Where the Past"
 	line "Meets the Present"
+
+	para "Jp: Enju City"
+
+	para "The city where"
+	line "present and past"
+	cont "concurrently flow"
+	cont "in history."
 	done
 
 TinTowerSignText:

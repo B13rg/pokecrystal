@@ -444,6 +444,12 @@ GoldenrodCitySignText:
 
 	para "The Festive City"
 	line "of Opulent Charm"
+
+	para "Jp: Kogane City"
+	
+	para "A bustling,"
+	line "brilliant city of"
+	cont "luxurious splendor"
 	done
 
 GoldenrodCityBikeShopSignText:

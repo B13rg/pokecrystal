@@ -142,8 +142,11 @@ AcademyStickerMachine:
 ; unused
 	jumptext AcademyStickerMachineText
 
-AcademyBookshelf:
-	jumpstd difficultbookshelf
+AcademyBookshelf1:
+	jumptext AcademyBookshelfText1
+
+AcademyBookshelf2:
+	jumptext AcademyBookshelfText2
 
 AcademyEarlSpinMovement:
 	turn_head DOWN
@@ -162,29 +165,29 @@ AcademyEarlSpinMovement:
 	step_end
 
 AcademyEarlIntroText:
-	text "EARL, I am!"
+	text "I be EARL!"
 
 	para "Wonderful are"
 	line "#MON, yes!"
 
-	para "Teach you I will"
-	line "to be a better"
-	cont "trainer!"
+	para "Teach you to"
+	line "be a better"
+	cont "trainer I will!"
 
 	para "What you want to"
 	line "know? Want to be"
-	cont "a winner is you?"
+	cont "a winner, do you?"
 	done
 
 AcademyEarlTeachHowToWinText:
-	text "Good! Teach you,"
+	text "Good! Teach you"
 	line "I will!"
 
 	para "In battle, #MON"
-	line "top on list jump"
-	cont "out first!"
+	line "at top of list"
+	cont "jump out first!"
 
-	para "Change order in"
+	para "Change order of"
 	line "list, make battle"
 	cont "easy, maybe!"
 
@@ -259,6 +262,10 @@ EarlsPokemonAcademyYoungster2Text:
 	line "can be held by"
 	cont "#MON…"
 
+	para "Some even cause"
+	line "the holder to"
+	cont "evolve!"
+
 	para "It sure is tough"
 	line "taking notes…"
 	done
@@ -278,23 +285,24 @@ AcademyBlackboardText2:
 
 AcademyPoisonText:
 	text "If poisoned, a"
-	line "#MON steadily"
-	cont "loses HP."
+	line "#MON loses 1/8 HP"
+	cont "each turn."
 
 	para "Poison lingers"
 	line "after the battle,"
 
-	para "and HP is lost as"
-	line "you walk."
+	para "and 1 HP is lost"
+	line "every 4 steps"
+	cont "as you move."
 
 	para "To cure it, use an"
-	line "ANTIDOTE."
+	line "ANTIDOTE or BERRY."
 	done
 
 AcademyParalysisText:
 	text "Paralysis reduces"
-	line "speed and may"
-	cont "prevent movement."
+	line "speed by 1/4 and"
+	cont "may prevent movement."
 
 	para "It remains after"
 	line "battle, so use"
@@ -303,35 +311,43 @@ AcademyParalysisText:
 
 AcademySleepText:
 	text "If asleep, your"
-	line "#MON can't make"
-	cont "a move."
+	line "#MON can't use"
+	cont "most moves."
+
+	para "It will sleep"
+	line "up to 5 turns"
 
 	para "A sleeping #MON"
 	line "doesn't wake up"
 	cont "after battle."
-
+	
 	para "Wake it up with"
 	line "an AWAKENING."
 	done
 
 AcademyBurnText:
 	text "A burn steadily"
-	line "consumes HP."
+	line "consumes 1/8 HP."
 
-	para "It also reduces"
-	line "attack power."
+	para "It also cuts your"
+	line "#MON attack power"
+	cont "in half."
 
 	para "A burn lingers"
 	line "after battle."
 
-	para "Use a BURN HEAL as"
-	line "the cure."
+	para "A BURN HEAL can be"
+	line "used as a cure."
 	done
 
 AcademyFreezeText:
 	text "If your #MON is"
 	line "frozen, it can't"
 	cont "do a thing."
+
+	para "It can thaw itself"
+	line "with FLAMEWHEEL or"
+	cont "SACREDFIRE though."
 
 	para "It remains frozen"
 	line "after battle."
@@ -358,9 +374,9 @@ AcademyNotebookText1:
 	line "# BALL, weaken"
 	cont "the target first."
 
-	para "A poisoned or"
-	line "burned #MON is"
-	cont "easier to catch."
+	para "A #MON with a"
+	line "stat condition"
+	cont "is easier to catch"
 
 	para "Keep reading?"
 	done
@@ -409,6 +425,30 @@ AcademyStickerMachineText:
 	para "stickers!"
 	done
 
+AcademyBookshelfText1:
+	text "It's a book with"
+	line "lots of numbers..."
+
+	para "Determinant Values"
+	line "or DVs determine"
+	cont "the stats of a #MON"
+
+	para "They also effect"
+	line "things like gender"
+	cont "and shininess."
+
+AcademyBookshelfText2:
+	text "This book has lots"
+	line "of pictures..."
+
+	para "Friendship between"
+	line "a #MON and trainer"
+	cont "is very important."
+
+	para "It can even cause"
+	line "some species of"
+	cont "#MON to evolve."
+
 EarlsPokemonAcademy_MapEvents:
 	db 0, 0 ; filler
 
@@ -419,8 +459,8 @@ EarlsPokemonAcademy_MapEvents:
 	db 0 ; coord events
 
 	db 4 ; bg events
-	bg_event  0,  1, BGEVENT_READ, AcademyBookshelf
-	bg_event  1,  1, BGEVENT_READ, AcademyBookshelf
+	bg_event  0,  1, BGEVENT_READ, AcademyBookshelf1
+	bg_event  1,  1, BGEVENT_READ, AcademyBookshelf2
 	bg_event  3,  0, BGEVENT_READ, AcademyBlackboard
 	bg_event  4,  0, BGEVENT_READ, AcademyBlackboard
 

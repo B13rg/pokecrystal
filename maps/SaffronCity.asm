@@ -231,6 +231,14 @@ SaffronCitySignText:
 
 	para "Shining, Golden"
 	line "Land of Commerce"
+
+	para "Jp: Yamabuki City"
+
+	para "Yamabuki is the"
+	line "color of golden"
+	cont "radiance."
+
+	para "Shining big city."
 	done
 
 SaffronGymSignText:

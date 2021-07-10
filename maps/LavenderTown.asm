@@ -80,6 +80,14 @@ LavenderTownSignText:
 
 	para "The Noble Purple"
 	line "Town"
+	
+	para "Jp: Shion Town"
+
+	para "Shion is the color" 
+	line "of purple nobility"
+
+	para "The town oozing"
+	line "with nobleness."
 	done
 
 KantoRadioStationSignText:

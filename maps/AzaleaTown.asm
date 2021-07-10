@@ -409,6 +409,12 @@ AzaleaTownSignText:
 
 	para "#MON Live in"
 	line "Happy Harmony"
+
+	para "Jp: Hiwada Town"
+
+	para "The town of close"
+	line "friendships"
+	cont "with #MON"
 	done
 
 KurtsHouseSignText:
